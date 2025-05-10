@@ -4,6 +4,7 @@ import Profile from './pages/Profile';
 import Statements from './pages/Statements';
 import Transactions from './pages/Transactions';
 import Transfer from './pages/Transfer';
+import CallbackHandler from './pages/CallbackHandler'; // ✅ You need this import
 
 function App() {
   return (
@@ -15,10 +16,11 @@ function App() {
         <Link to="/transactions">Transactions</Link> |{" "}
         <Link to="/transfer">Transfer</Link>
       </nav>
-      
+
       <main style={{ padding: '1rem' }}>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/callback" element={<CallbackHandler />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/statements" element={<Statements />} />
           <Route path="/transactions" element={<Transactions />} />
