@@ -26,9 +26,6 @@ export default function Statements() {
         return res.json();
       })
       .then((data) => {
-        console.log("Raw API response:", data); // optional debug
-
-        // Use the object directly (no double parsing)
         if (data?.url) {
           setUrl(data.url);
         } else {
@@ -42,12 +39,12 @@ export default function Statements() {
   }, []);
 
   return (
-    <div>
+    <div className="page-container">
       <h2>Your Bank Statement</h2>
       {error && <p style={{ color: 'red' }}>{error}</p>}
       {url ? (
         <p>
-          Click the following link to view your statement (expires in 5 minutes):{" "} 
+          Click the following link to view your statement:{" "}
           <a href={url} target="_blank" rel="noopener noreferrer">
             View Statement
           </a>

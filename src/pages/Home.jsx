@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getToken, redirectToLogin, logout } from '../auth';
+import { getToken, logout, redirectToLogin } from '../auth';
 
 export default function Home() {
   const [email, setEmail] = useState(null);
@@ -20,13 +20,23 @@ export default function Home() {
     }
   }, []);
 
-  if (!email) return <p>Loading...</p>;
-
   return (
-    <div>
-      <h2>Welcome to the Secure Banking App</h2>
-      <p>You are signed in as: <strong>{email}</strong></p>
-      <button onClick={logout}>Sign Out</button>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        textAlign: 'center',
+        minHeight: '80vh',
+        width: '100%',
+      }}
+    >
+      <h2>Welcome to the VaultGuard, your secure banking app</h2>
+      {email && <p>You are signed in as: <strong>{email}</strong></p>}
+      <button onClick={logout} style={{ marginTop: '1rem' }}>
+        Sign Out
+      </button>
     </div>
   );
 }

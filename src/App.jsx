@@ -4,12 +4,13 @@ import Profile from './pages/Profile';
 import Statements from './pages/Statements';
 import Transactions from './pages/Transactions';
 import Transfer from './pages/Transfer';
-import CallbackHandler from './pages/CallbackHandler'; // ✅ You need this import
+import CallbackHandler from './pages/CallbackHandler';
+import './layout.css'; // ✅ Import the layout styles here
 
 function App() {
   return (
     <div>
-      <nav style={{ padding: '1rem', borderBottom: '1px solid #ccc' }}>
+      <nav style={{ padding: '1rem', borderBottom: '1px solid #ccc', textAlign: 'center' }}>
         <Link to="/">Home</Link> |{" "}
         <Link to="/profile">Profile</Link> |{" "}
         <Link to="/statements">Statements</Link> |{" "}
@@ -17,7 +18,8 @@ function App() {
         <Link to="/transfer">Transfer</Link>
       </nav>
 
-      <main style={{ padding: '1rem' }}>
+      {/* ✅ Apply page layout wrapper globally */}
+      <div className="page-container">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/callback" element={<CallbackHandler />} />
@@ -26,7 +28,7 @@ function App() {
           <Route path="/transactions" element={<Transactions />} />
           <Route path="/transfer" element={<Transfer />} />
         </Routes>
-      </main>
+      </div>
     </div>
   );
 }

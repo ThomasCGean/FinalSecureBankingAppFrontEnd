@@ -3,11 +3,20 @@
 .page-container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     text-align: center;
+    min-height: 80vh;
+    width: 100%;
     padding: 2rem;
-    max-width: 800px;
-    margin: 0 auto;
-    font-family: sans-serif;
+    box-sizing: border-box;
+    color: white; /* for visibility on dark/colored backgrounds */
+    background-color: rgba(0, 0, 0, 0.4); /* optional semi-transparent overlay */
+    border-radius: 8px;
+  }
+  
+  nav {
+    text-align: center;
+    margin-bottom: 1rem;
   }
   
