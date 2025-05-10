@@ -32,7 +32,7 @@ export default function Home() {
         width: '100%',
       }}
     >
-      <h2>Welcome to the VaultGuard, the most secure banking app on this specific network
+      <h2>Welcome to the VaultGuard, the most secure banking app on this specific VPC
       </h2>
       {email && <p>You are signed in as: <strong>{email}</strong></p>}
       <button onClick={logout} style={{ marginTop: '1rem' }}>
